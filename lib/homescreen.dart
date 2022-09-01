@@ -20,12 +20,10 @@ class _HomeScreenState extends State<HomeScreen> {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       double minScrollExtent1 = _scrollController1.position.minScrollExtent;
       double maxScrollExtent1 = _scrollController1.position.maxScrollExtent;
-
-      double minScrollExtent2 = _scrollController1.position.minScrollExtent;
-      double maxScrollExtent2 = _scrollController1.position.maxScrollExtent;
-
-      double minScrollExtent3 = _scrollController1.position.minScrollExtent;
-      double maxScrollExtent3 = _scrollController1.position.maxScrollExtent;
+      double minScrollExtent2 = _scrollController2.position.minScrollExtent;
+      double maxScrollExtent2 = _scrollController2.position.maxScrollExtent;
+      double minScrollExtent3 = _scrollController3.position.minScrollExtent;
+      double maxScrollExtent3 = _scrollController3.position.maxScrollExtent;
 
       animateToMaxMin(maxScrollExtent1, minScrollExtent1, maxScrollExtent1, 25,
           _scrollController1);
