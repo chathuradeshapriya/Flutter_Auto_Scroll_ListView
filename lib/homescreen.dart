@@ -30,10 +30,10 @@ class _HomeScreenState extends State<HomeScreen> {
       animateToMaxMin(maxScrollExtent1, minScrollExtent1, maxScrollExtent1, 25,
           _scrollController1);
 
-      animateToMaxMin(maxScrollExtent2, minScrollExtent2, maxScrollExtent2, 25,
+      animateToMaxMin(maxScrollExtent2, minScrollExtent2, maxScrollExtent2, 15,
           _scrollController2);
 
-      animateToMaxMin(maxScrollExtent3, minScrollExtent3, maxScrollExtent3, 25,
+      animateToMaxMin(maxScrollExtent3, minScrollExtent3, maxScrollExtent3, 20,
           _scrollController3);
     });
   }
@@ -55,17 +55,46 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Scaffold(
         backgroundColor: Colors.white,
         body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            MoviesListView(
-              scrollController: _scrollController1,
-              images: movies1,
-            ),            MoviesListView(
-              scrollController: _scrollController2,
-              images: movies2,
-            ),            MoviesListView(
-              scrollController: _scrollController3,
-              images: movies3,
+            Column(
+              children: [
+                MoviesListView(
+                  scrollController: _scrollController1,
+                  images: movies1,
+                ),            MoviesListView(
+                  scrollController: _scrollController2,
+                  images: movies2,
+                ),            MoviesListView(
+                  scrollController: _scrollController3,
+                  images: movies3,
+                ),
+              ],
             ),
+
+            Text('30 days for free',
+            style: TextStyle(
+              fontSize: 35, fontWeight: FontWeight.bold
+            ),),
+
+            Material(
+              elevation: 0,
+              color: Color(0xfff2c94c),
+              borderRadius: BorderRadius.circular(20),
+              child: MaterialButton(
+                onPressed: () {},
+                minWidth: 340,
+                height: 60,
+                child: Text(
+                  'Continue',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            )
           ],
         ),
       ),
